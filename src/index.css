@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primaryColor: #000000;
+  --secundaryColor: #fff;
+  --thirdColor: #AD82E8;
+  --backgroundColor: ;
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  font-family: var(--font);
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: var(--primaryColor);
+  height: 150px;
+}
+
+.main-header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+.main-header__navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.main-header__navbar-nav__logo {
+  width: 150px;
+  cursor: pointer;
+}
+.main-header__navbar-nav__nav {
+  display: flex;
+  gap: 30px;
+}
+.main-header__navbar-nav__nav a {
+  text-decoration: none;
+  color: var(--secundaryColor);
+  cursor: pointer;
+  transition: 300ms;
+}
+.main-header__navbar-nav__nav a:hover {
+  color: var(--thirdColor);
+  text-decoration: underline;
+  font-weight: bold;
+}
+.main-header__navbar-searchprofile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  color: var(--secundaryColor);
+}
+.main-header__navbar-searchprofile__search i {
+  font-size: 25px;
+  cursor: pointer;
+}
+.main-header__navbar-searchprofile__search i:hover {
+  color: var(--thirdColor);
+}
+.main-header__navbar-searchprofile__avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--thirdColor);
+  clip-path: circle(50%);
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+}
+.main-header__navbar-searchprofile__avatar p {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+/*# sourceMappingURL=index.css.map */
