@@ -1,4 +1,14 @@
+import { useRef } from 'react';
+import HeaderAvatar from './HeaderAvatar';
+
 const Header = () => {
+  const navigation = useRef(null)
+
+  const showNavigation = () => {
+    navigation.current?.classList.toggle('main-header__hamburger--show')
+    console.log(navigation.current)
+  }
+
   return (
     <header className="main-header">
       <div className="main-header__navbar container">
@@ -10,21 +20,19 @@ const Header = () => {
             />
           </div>
 
-          <nav className="main-header__navbar-nav__nav">
+          <nav ref={navigation} className="main-header__navbar-nav__nav">
             <a href="#">Populares</a>
             <a href="#">Novedades </a>
             <a href="#">Generos</a>
           </nav>
         </div>
 
-        <div className="main-header__navbar-searchprofile">
-          <p className="main-header__navbar-searchprofile__search">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </p>
+        <div className="main-header__hamburger">
+         <button className='main-header__hamburger-cta' onClick={showNavigation}>
+          <i className="fa-solid fa-bars"></i>
+          </button>
 
-          <div className="main-header__navbar-searchprofile__avatar">
-                <p>D</p>
-          </div>
+          <HeaderAvatar />
         </div>
       </div>
     </header>

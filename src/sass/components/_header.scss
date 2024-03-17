@@ -1,13 +1,13 @@
 .main-header {
   background-color: var(--primaryColor);
-  height: 150px;
+  position: relative;
 }
 
 .main-header__navbar {
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
   &-nav {
     display: flex;
     justify-content: space-between;
@@ -16,6 +16,12 @@
     &__logo {
       width: 150px;
       cursor: pointer;
+    }
+    @media (max-width: 843px) {
+      &__logo {
+        width: 125px;
+        cursor: pointer;
+      }
     }
     &__nav {
       display: flex;
@@ -29,40 +35,42 @@
           color: var(--thirdColor);
           text-decoration: underline;
           font-weight: bold;
-          
         }
       }
-    }
-  }
-  &-searchprofile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    color: var(--secundaryColor);
-    &__search i {
-      font-size: 25px;
-      cursor: pointer;
-      &:hover {
-        color: var(--thirdColor);
-      }
-    }
-    &__avatar{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--thirdColor);
-      clip-path: circle(50%);
-      height: 60px;
-      width: 60px;
-      margin: 0 auto;
-      p{
-        font-size: 25px;
-        font-weight: 600;
-        color: var(--primaryColor);
+      @media (max-width: 843px) {
+        position: absolute;
+        top: 120px;
+        width: 100%;
+        left: 0;
+        background-color: var(--primaryColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        padding-bottom: 30px;
+        display: none;
       }
     }
   }
-}  
 
+  .main-header__hamburger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &-cta {
+      font-size: 22px;
+      border: none;
+      color: var(--secundaryColor);
+      background-color: transparent;
+      @media (min-width: 843px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-header__hamburger--show {
+  display: flex;
+  
+}

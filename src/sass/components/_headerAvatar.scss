@@ -1,0 +1,59 @@
+.header-avatar {
+  position: relative;
+  &__cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--thirdColor);
+    clip-path: circle(50%);
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    p {
+      font-size: 25px;
+      font-weight: 600;
+      color: var(--primaryColor);
+    }
+    @media (max-width: 843px) {
+      height: 50px;
+      width: 50px;
+      p{
+        font-size: 20px;
+      }
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    background-color: var(--secundaryColor);
+    z-index: 1;
+    top: 70px;
+    left: -70%;
+    width: 130px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    padding: 8px;
+    display: none;
+    a {
+      text-decoration: none;
+      color: var(--primaryColor);
+      font-weight: 600;
+      font-size: 17px;
+    }
+    &-show {
+      display: block;
+    }
+    @media (max-width: 843px) {
+      position: absolute;
+      width: 110px;
+      top: 60px;
+      left: -70px;
+      a{
+        font-size: 16px;
+      }
+    }
+  }
+}
