@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Login from './components/login/Login';
-import Header from './components/Header';
+import SingUp from './components/sign-up/SingUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/login" element={<Login/>} />
+          <Route path="/auth/signup" element={<SingUp />} />
         </Routes>
       </BrowserRouter>
     </>

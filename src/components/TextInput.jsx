@@ -4,6 +4,7 @@ const TextInput = ({ label, placeholder, value, type, onchange }) => {
     <div className="regular-textinput">
       <label>{label}</label>
       <input
+        autoComplete=""
         type={type}
         placeholder={placeholder}
         onChange={onchange}
