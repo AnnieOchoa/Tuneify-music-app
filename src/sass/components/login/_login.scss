@@ -1,0 +1,40 @@
+.main {
+  height: 100vh;
+  background-image: url(https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710713813/tuneify/headphones-displayed-against-dark-background_tn0wze.jpg);
+  background-size: cover;
+  background-position: right right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  &-login {
+    &__wrapper {
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #0c0c0ca3;
+      backdrop-filter: blur(5px);
+      width: 100%;
+      max-width: 700px;
+      &__form {
+        width: 92%;
+        max-width: 650px;
+      }
+      &__logo {
+        width: 200px;
+        margin-bottom: 55px;
+      }
+      &__heading {
+        color: var(--secundaryColor);
+        margin-bottom: 30px;
+        h1 {
+          font-size: 55px;
+          span {
+            color: var(--thirdColor);
+          }
+        }
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

@@ -2,12 +2,12 @@ import { useRef } from 'react';
 import HeaderAvatar from './HeaderAvatar';
 
 const Header = () => {
-  const navigation = useRef(null)
+  const navigation = useRef(null);
 
   const showNavigation = () => {
-    navigation.current?.classList.toggle('main-header__hamburger--show')
-    console.log(navigation.current)
-  }
+    navigation.current?.classList.toggle('main-header__hamburger--show');
+    console.log(navigation.current);
+  };
 
   return (
     <header className="main-header">
@@ -28,8 +28,11 @@ const Header = () => {
         </div>
 
         <div className="main-header__hamburger">
-         <button className='main-header__hamburger-cta' onClick={showNavigation}>
-          <i className="fa-solid fa-bars"></i>
+          <button
+            className="main-header__hamburger-cta"
+            onClick={showNavigation}
+          >
+            <i className="fa-solid fa-bars"></i>
           </button>
 
           <HeaderAvatar />

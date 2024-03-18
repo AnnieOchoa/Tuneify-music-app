@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import Header from './components/Header';
 import './App.css';
+import { useState } from 'react';
+import Login from './components/login/Login';
+import Header from './components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -8,10 +9,9 @@ function App() {
 
   return (
     <>
-      <Header />
       <BrowserRouter>
         <Routes>
-          <Route />
+          <Route path="/auth/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

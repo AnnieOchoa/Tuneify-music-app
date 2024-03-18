@@ -1,0 +1,27 @@
+.base-btn {
+  margin-top: 30px;
+  color: var(--secundaryColor);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--thirdColor);
+  transition: 300ms;
+}
+
+.filled-btn {
+  @extend .base-btn;
+  background-color: var(--thirdColor);
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.outlined-btn {
+  @extend .base-btn;
+  background-color: transparent;
+  &:hover {
+    background-color: var(--thirdColor);
+  }
+}

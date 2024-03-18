@@ -2,7 +2,7 @@
 :root {
   --primaryColor: #000000;
   --secundaryColor: #fff;
-  --thirdColor: #AD82E8;
+  --thirdColor: #ad82e8;
   --backgroundColor: ;
   --font: "Poppins", sans-serif;
 }
@@ -163,6 +163,115 @@ img {
   .header-avatar__dropdown a {
     font-size: 16px;
   }
+}
+
+.main {
+  height: 100vh;
+  background-image: url(https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710713813/tuneify/headphones-displayed-against-dark-background_tn0wze.jpg);
+  background-size: cover;
+  background-position: right right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.main-login__wrapper {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(12, 12, 12, 0.6392156863);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  max-width: 700px;
+}
+.main-login__wrapper__form {
+  width: 92%;
+  max-width: 650px;
+}
+.main-login__wrapper__logo {
+  width: 200px;
+  margin-bottom: 55px;
+}
+.main-login__wrapper__heading {
+  color: var(--secundaryColor);
+  margin-bottom: 30px;
+}
+.main-login__wrapper__heading h1 {
+  font-size: 55px;
+}
+.main-login__wrapper__heading h1 span {
+  color: var(--thirdColor);
+}
+.main-login__wrapper__heading p {
+  font-size: 17px;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-form__username, .main-form__password {
+  display: flex;
+  flex-direction: column;
+  color: var(--secundaryColor);
+}
+
+.main-form__forgotpassword {
+  margin-top: 11px;
+}
+.main-form__forgotpassword a {
+  color: var(--secundaryColor);
+  text-decoration: none;
+}
+.main-form__forgotpassword a span {
+  font-weight: 600;
+}
+
+.main-form__cta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.regular-textinput {
+  display: flex;
+  flex-direction: column;
+}
+.regular-textinput label {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.regular-textinput input {
+  border: 2px solid var(--thirdColor);
+  border-radius: 10px;
+  width: 90%;
+  padding: 10px;
+}
+
+.base-btn, .outlined-btn, .filled-btn {
+  margin-top: 30px;
+  color: var(--secundaryColor);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--thirdColor);
+  transition: 300ms;
+}
+
+.filled-btn {
+  background-color: var(--thirdColor);
+}
+.filled-btn:hover {
+  background-color: transparent;
+}
+
+.outlined-btn {
+  background-color: transparent;
+}
+.outlined-btn:hover {
+  background-color: var(--thirdColor);
 }
 
 /*# sourceMappingURL=index.css.map */

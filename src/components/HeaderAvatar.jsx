@@ -19,13 +19,14 @@ const HeaderAvatar = () => {
       <button
         ref={avatar}
         className="header-avatar__cta"
-        onClick={showDropdown} >
+        onClick={showDropdown}
+      >
         <p>D</p>
       </button>
       <nav ref={nav} className="header-avatar__dropdown">
-        <a href='#'>Perfil</a>
+        <a href="#">Perfil</a>
         <hr />
-        <a href='#'>Cerrar Sesión</a>
+        <a href="#">Cerrar Sesión</a>
       </nav>
     </div>
   );
