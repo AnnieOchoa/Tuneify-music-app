@@ -28,7 +28,7 @@ const LoginForm = () => {
 
       <div className="main-form__cta">
         <Button name="Iniciar Sesión" />
-        <Button name="Registrarse" style="outlined-btn" />
+        <Button name="Registrarse" path="/auth/signup" type='navigation' style="outlined-btn" />
       </div>
     </form>
   );

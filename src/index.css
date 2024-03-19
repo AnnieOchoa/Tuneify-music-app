@@ -258,6 +258,7 @@ img {
   cursor: pointer;
   border: 1px solid var(--thirdColor);
   transition: 300ms;
+  text-decoration: none;
 }
 
 .filled-btn {
@@ -272,6 +273,77 @@ img {
 }
 .outlined-btn:hover {
   background-color: var(--thirdColor);
+}
+
+.main-page {
+  height: 100vh;
+  background-image: url(https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710804158/tuneify/smiling-caucasian-young-man-s-portrait-handsome-male-model-casual-style-min_qoqerf.jpg);
+  background-size: cover;
+  background-position: right right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.main-page-signup__wrapper {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(12, 12, 12, 0.6392156863);
+  backdrop-filter: blur(3px);
+  width: 100%;
+  max-width: 650px;
+}
+.main-page-signup__wrapper__form {
+  width: 92%;
+  max-width: 650px;
+}
+.main-page-signup__wrapper__logo {
+  width: 200px;
+  margin-bottom: 55px;
+}
+.main-page-signup__wrapper__heading {
+  color: var(--secundaryColor);
+  margin-bottom: 30px;
+}
+.main-page-signup__wrapper__heading h1 {
+  font-size: 55px;
+}
+.main-page-signup__wrapper__heading h1 span {
+  color: var(--thirdColor);
+}
+.main-page-signup__wrapper__heading p {
+  font-size: 17px;
+}
+.main-page-signup__wrapper__heading p span {
+  color: var(--thirdColor);
+  font-weight: bold;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-form__username, .main-form__password, .main-form__email {
+  display: flex;
+  flex-direction: column;
+  color: var(--secundaryColor);
+}
+
+.main-form__forgotpassword {
+  margin-top: 11px;
+}
+.main-form__forgotpassword a {
+  color: var(--secundaryColor);
+  text-decoration: none;
+}
+.main-form__forgotpassword a span {
+  font-weight: 600;
+}
+
+.main-form__cta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */

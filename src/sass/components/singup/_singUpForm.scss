@@ -1,0 +1,30 @@
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__username,
+    &__password,
+    &__email {
+      display: flex;
+      flex-direction: column;
+      color: var(--secundaryColor);
+    }
+  }
+  
+  .main-form__forgotpassword {
+      margin-top: 11px;
+      a{
+          color: var(--secundaryColor);
+          text-decoration: none;
+          span{
+              font-weight: 600;
+          }
+      }
+  }
+  
+  .main-form__cta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
