@@ -1,0 +1,67 @@
+.main-card {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 400px;
+  backdrop-filter: blur(3px);
+  border-radius: 15px;
+  padding-bottom: 25px;
+  position: relative;
+  transition: 550ms;
+  background-color: rgb(19, 18, 18);
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+    .main-card__cover__playIcon {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__cover {
+    margin-bottom: 15px;
+    &__image {
+      img {
+        width: 70%;
+        margin-top: 5%;
+        margin-left: 16%;
+        margin-right: 16%;
+        border-radius: 10px;
+      }
+    }
+    &__playIcon {
+      border: none;
+      background-color: transparent;
+      max-width: 100px;
+      position: absolute;
+      bottom: 120px;
+      right: 45px;
+      border-radius: 20px;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: 550ms;
+      cursor: pointer;
+      &--bg {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        z-index: -1;
+        transition: 300ms;
+        background-color: var(--primaryColor);
+      }
+      i {
+        font-size: 65px;
+        font-weight: bold;
+        color: var(--thirdColor);
+      }
+    }
+  }
+  &__info {
+    color: white;
+    text-align: center;
+  }
+}

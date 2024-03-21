@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-const Button = ({ path, type = 'button', name, onClick, style = 'filled-btn' }) => {
-  if(type === 'navigation'){
+const Button = ({
+  path,
+  type = 'button',
+  name,
+  onClick,
+  style = 'filled-btn',
+}) => {
+  if (type === 'navigation') {
     return (
-      <Link className={style} to={path}>{name}</Link>
-    )
+      <Link className={style} to={path}>
+        {name}
+      </Link>
+    );
   }
   return (
     <button className={style} onClick={onClick}>

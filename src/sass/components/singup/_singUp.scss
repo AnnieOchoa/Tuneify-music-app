@@ -1,45 +1,44 @@
-.main-page{
-    height: 100vh;
-    background-image: url(https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710804158/tuneify/smiling-caucasian-young-man-s-portrait-handsome-male-model-casual-style-min_qoqerf.jpg);
-    background-size: cover;
-    background-position: right right;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    &-signup {
-      &__wrapper {
-        padding: 30px;
-        border-radius: 10px;
-        background-color: #0c0c0ca3;
-        backdrop-filter: blur(3px);
-        width: 100%;
+.main-page {
+  height: 100vh;
+  background-image: url(https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710804158/tuneify/smiling-caucasian-young-man-s-portrait-handsome-male-model-casual-style-min_qoqerf.jpg);
+  background-size: cover;
+  background-position: right right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  &-signup {
+    &__wrapper {
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #0c0c0ca3;
+      backdrop-filter: blur(3px);
+      width: 100%;
+      max-width: 650px;
+      &__form {
+        width: 92%;
         max-width: 650px;
-        &__form {
-          width: 92%;
-          max-width: 650px;
-        }
-        &__logo {
-          width: 200px;
-          margin-bottom: 55px;
-        }
-        &__heading {
-          color: var(--secundaryColor);
-          margin-bottom: 30px;
-          h1 {
-            font-size: 55px;
-            span {
-              color: var(--thirdColor);
-            }
+      }
+      &__logo {
+        width: 200px;
+        margin-bottom: 55px;
+      }
+      &__heading {
+        color: var(--secundaryColor);
+        margin-bottom: 30px;
+        h1 {
+          font-size: 55px;
+          span {
+            color: var(--thirdColor);
           }
-          p {
-            font-size: 17px;
-            span{
-                color: var(--thirdColor);
-                font-weight: bold;
-            }
+        }
+        p {
+          font-size: 17px;
+          span {
+            color: var(--thirdColor);
+            font-weight: bold;
           }
         }
       }
     }
   }
-  
+}

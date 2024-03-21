@@ -1,0 +1,120 @@
+.main-home {
+  &-page {
+    &__title {
+      color: #fff;
+      margin: 40px 0;
+      p {
+        span {
+          font-weight: bold;
+          font-size: 19px;
+          color: var(--thirdColor);
+        }
+      }
+    }
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 100px;
+    }
+    &__songcards {
+      margin-bottom: 50px;
+      &__title {
+        color: var(--secundaryColor);
+        margin-bottom: 50px;
+        h2 {
+          span {
+            font-weight: 800;
+            color: var(--thirdColor);
+          }
+        }
+      }
+      &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  }
+  &__player{
+    max-height: 210px;
+    padding: 20px;
+    background: #000;
+    &--wrapper{
+      position: relative;
+      &--close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: 300ms;
+        i{
+          color: #fff;
+          font-size: 25px;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      @media (max-width: 630px){
+        flex-direction: column;
+      }
+      &-cover{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        img{
+          border-radius: 10px;
+          width: 150px;
+        }
+        &__body{
+          color: var(--secundaryColor);
+        }
+      }
+      &-progress{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        &-bar{
+          width: 100%;
+          input{
+            width: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+            -webkit-appearance: none;
+            &::-webkit-slider-runnable-track{
+              background: var(--thirdColor);
+            }
+            &::-webkit-slider-thumb{
+              background-color: #fff;
+              width: 12px;
+              -webkit-appearance: none;
+              height: 12px;
+              cursor: pointer;
+              border-radius: 10px;
+            }
+          }
+        }
+        button{
+          background-color: transparent;
+          border: none;
+          transition: 300ms;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.08);
+          }
+          i{
+            color: #fff;
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+

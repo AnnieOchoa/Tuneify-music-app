@@ -1,5 +1,4 @@
-import SingUpForm from "./SingUpForm";
-
+import SingUpForm from './SingUpForm';
 
 const SignUp = () => {
   return (
@@ -20,14 +19,12 @@ const SignUp = () => {
                 Bienvenido a <span>Tuneify</span>{' '}
               </h1>
               <p>
-                <span>Crea</span> tu cuenta y escucha tu musica favorita donde quieras y
-                cuando quieras.
+                <span>Crea</span> tu cuenta y escucha tu musica favorita donde
+                quieras y cuando quieras.
               </p>
             </div>
 
-            <SingUpForm/>
-
-            
+            <SingUpForm />
           </div>
         </div>
       </div>

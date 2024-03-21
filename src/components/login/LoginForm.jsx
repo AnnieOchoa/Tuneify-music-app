@@ -23,12 +23,19 @@ const LoginForm = () => {
       </div>
 
       <div className="main-form__forgotpassword">
-              <a href="#">¿Olvidaste tu contraseña? <span>¡Recuperala!</span> </a>
+        <a href="#">
+          ¿Olvidaste tu contraseña? <span>¡Recuperala!</span>{' '}
+        </a>
       </div>
 
       <div className="main-form__cta">
         <Button name="Iniciar Sesión" />
-        <Button name="Registrarse" path="/auth/signup" type='navigation' style="outlined-btn" />
+        <Button
+          name="Registrarse"
+          path="/auth/signup"
+          type="navigation"
+          style="outlined-btn"
+        />
       </div>
     </form>
   );

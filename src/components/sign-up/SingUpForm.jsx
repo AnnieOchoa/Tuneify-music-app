@@ -36,12 +36,11 @@ const SingUpForm = () => {
             type="password"
           />
         </div>
-        
       </div>
 
       <div className="main-form__cta">
         <Button name="Registrarse" style="outlined-btn" />
-        <Button path='/auth/login' type='navigation' name="Iniciar Sesión" />
+        <Button path="/auth/login" type="navigation" name="Iniciar Sesión" />
       </div>
     </form>
   );

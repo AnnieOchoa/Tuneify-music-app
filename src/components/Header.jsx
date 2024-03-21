@@ -1,16 +1,22 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import HeaderAvatar from './HeaderAvatar';
 
 const Header = () => {
   const navigation = useRef(null);
+  const [scroll, setScroll] = useState(0);
 
   const showNavigation = () => {
     navigation.current?.classList.toggle('main-header__hamburger--show');
-    console.log(navigation.current);
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScroll(window.scrollY);
+    });
+  }, []);
+
   return (
-    <header className="main-header">
+    <header className="main-header" data-scroll={scroll}>
       <div className="main-header__navbar container">
         <div className="main-header__navbar-nav">
           <div className="main-header__navbar-nav__logo">

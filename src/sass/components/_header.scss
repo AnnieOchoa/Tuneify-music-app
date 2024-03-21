@@ -1,6 +1,15 @@
 .main-header {
   background-color: var(--primaryColor);
-  position: relative;
+  height: 120px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: 300ms;
+  z-index: 1;
+  &:not([data-scroll='0']) {
+    background: #2b2b2bca;
+    backdrop-filter: blur(4px);
+  }
 }
 
 .main-header__navbar {
