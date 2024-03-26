@@ -1,81 +1,109 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../Card';
 import Header from '../Header';
-import SongCard from '../SongCard';
+import { useNavigate } from 'react-router';
+import Player from '../Player';
+import { getLetter } from '../../helpers/getLetter';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [songs, setSongs] = useState([]);
+  const [playingSong, setPlayingSong] = useState(null);
+  const [letter, setLetter] = useState('H');
+  const [query, setQuery] = useState('');
+  const url = `https://spotify23.p.rapidapi.com/search/?q=${query}&type=tracks&offset=0&limit=18&numberOfTopResults=5`;
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'cd4f1b748fmsh4bef55854802c4ep1f93a9jsnf0254dfd3254',
+      'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
+    },
+  };
+
   useEffect(() => {
-    document.querySelector('body').style.backgroundColor = '#191919';
+    document.body.style.backgroundColor = '#191919';
+    document.body.style.marginTop = '130px';
+    document.body.style.marginBottom = '130px';
   }, []);
+
+  useEffect(() => {
+    const userData = window.localStorage.getItem('userData');
+    if (!userData) {
+      return navigate('/auth/login');
+    }
+    const { email } = JSON.parse(userData);
+    setLetter(email);
+  }, []);
+
+  const fetchSongs = async () => {
+    const response = await fetch(url, options);
+    const {
+      tracks: { items },
+    } = await response.json();
+    setSongs(items);
+  };
+
   return (
     <>
-      <Header />
+      <Header letter={getLetter(letter)} />
 
       <main className="main-home">
         <div className="main-home-page container">
           <div className="main-home-page__title">
-            <h1>Novedades</h1>
-            <p>
-              Nueva <span>Musica</span>{' '}
-            </p>
+            <div className="main-home-page__title--heading">
+              <h1>Novedades</h1>
+              <p>
+                Nueva <span>Musica</span>{' '}
+              </p>
+            </div>
+            <div className="main-home-page__title--search">
+              <label>Buscar</label>
+              <div>
+                <input
+                  onKeyDown={(e) => {
+                    e.key === 'Enter' && fetchSongs()
+                  }}
+                  placeholder=''
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  type="search"
+                />
+                <button onClick={fetchSongs}>
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="main-home-page__cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
-
-          <div className="main-home-page__songcards">
-            <div className="main-home-page__songcards__title">
-              <h2>
-                Musica <span>+ TOP</span>{' '}
-              </h2>
-              <p>¡Las mas escuchado! </p>
-            </div>
-
-            <div className="main-home-page__songcards__cards">
-              <SongCard />
-              <SongCard />
-              <SongCard />
-              <SongCard />
-              <SongCard />
-              <SongCard />
-            </div>
-          </div>
-        </div>
-
-        <div className="main-home__player">
-          <div className="main-home__player--wrapper container">
-            <button className="main-home__player--wrapper--close">
-              <i className="fa-solid fa-circle-xmark"></i>
-            </button>
-            <div className="main-home__player--wrapper-cover">
-              <img
-                src="https://res.cloudinary.com/dy6gbr4oc/image/upload/v1710962334/tuneify/DuaLipa_FutureNostalgiaCD_go8gms.webp"
-                alt="cover"
-              />
-              <div className="main-home__player--wrapper-cover__body">
-                <h3>Levitating</h3>
-                <p>Dua Lipa</p>
-              </div>
-            </div>
-            <div className="main-home__player--wrapper-progress">
-              <div className="main-home__player--wrapper-progress-bar">
-                <input type="range" />
-              </div>
-              <button>
-                <i className="fa-solid fa-pause"></i> 
-              </button>
-              <button>
-                <i className="fa-solid fa-volume-low"></i>
-              </button>
-            </div>
+            {songs.length ? (
+              songs?.map(({ data }) => {
+                const cover = data.albumOfTrack.coverArt.sources[0].url;
+                const title = data.name;
+                const album = data.albumOfTrack.name;
+                const artist = data.artists.items[0].profile.name;
+                const id = data.id;
+                return (
+                  <Card
+                    album={album}
+                    artist={artist}
+                    title={title}
+                    cover={cover}
+                    key={id}
+                    onClick={() => {
+                      setPlayingSong(`https://open.spotify.com/track/${id}`);
+                    }}
+                  />
+                );
+              })
+            ) : (
+              <p style={{ color: '#fff' }}>
+                No hay canciones. Busca una para comenzar
+              </p>
+            )}
           </div>
         </div>
+        {playingSong && <Player song={playingSong} />}
       </main>
     </>
   );

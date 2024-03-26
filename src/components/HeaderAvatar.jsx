@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
-const HeaderAvatar = () => {
+const HeaderAvatar = ({letter}) => {
   const nav = useRef(null);
   const avatar = useRef(null);
   useEffect(() => {
@@ -21,12 +22,10 @@ const HeaderAvatar = () => {
         className="header-avatar__cta"
         onClick={showDropdown}
       >
-        <p>D</p>
+        <p>{letter}</p>
       </button>
       <nav ref={nav} className="header-avatar__dropdown">
-        <a href="#">Perfil</a>
-        <hr />
-        <a href="#">Cerrar Sesión</a>
+        <Link to="/logout">Cerrar Sesión</Link>
       </nav>
     </div>
   );

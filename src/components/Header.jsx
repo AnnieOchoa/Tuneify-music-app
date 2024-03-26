@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import HeaderAvatar from './HeaderAvatar';
 
-const Header = () => {
+const Header = ({letter}) => {
   const navigation = useRef(null);
   const [scroll, setScroll] = useState(0);
 
@@ -41,7 +41,7 @@ const Header = () => {
             <i className="fa-solid fa-bars"></i>
           </button>
 
-          <HeaderAvatar />
+          <HeaderAvatar letter={letter} />
         </div>
       </div>
     </header>

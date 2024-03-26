@@ -1,13 +1,50 @@
 .main-home {
   &-page {
     &__title {
-      color: #fff;
-      margin: 40px 0;
-      p {
-        span {
-          font-weight: bold;
-          font-size: 19px;
-          color: var(--thirdColor);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: 843px) {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+      &--heading {
+        color: #fff;
+        margin: 40px 0;
+        p {
+          span {
+            font-weight: bold;
+            font-size: 19px;
+            color: var(--thirdColor);
+          }
+        }
+      }
+      &--search{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        input{
+          border-radius: 5px;
+          padding: 8px 10px;
+          width: 260px;
+          &:focus{
+            outline: 1px solid var(--thirdColor);
+          }
+        }
+        button{
+          background: none;
+          border: none;
+          cursor: pointer;
+          &:hover{
+            opacity: 80%;
+          }
+          i{
+            color: var(--thirdColor);
+            font-size: 22px;
+            margin-left: 10px;
+          }
         }
       }
     }
@@ -38,83 +75,12 @@
       }
     }
   }
-  &__player{
-    max-height: 210px;
-    padding: 20px;
-    background: #000;
-    &--wrapper{
-      position: relative;
-      &--close{
-        position: absolute;
-        right: 0;
-        top: 0;
-        border: none;
-        background: none;
-        cursor: pointer;
-        transition: 300ms;
-        i{
-          color: #fff;
-          font-size: 25px;
-        }
-      }
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      @media (max-width: 630px){
-        flex-direction: column;
-      }
-      &-cover{
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        img{
-          border-radius: 10px;
-          width: 150px;
-        }
-        &__body{
-          color: var(--secundaryColor);
-        }
-      }
-      &-progress{
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        &-bar{
-          width: 100%;
-          input{
-            width: 100%;
-            overflow: hidden;
-            border-radius: 5px;
-            -webkit-appearance: none;
-            &::-webkit-slider-runnable-track{
-              background: var(--thirdColor);
-            }
-            &::-webkit-slider-thumb{
-              background-color: #fff;
-              width: 12px;
-              -webkit-appearance: none;
-              height: 12px;
-              cursor: pointer;
-              border-radius: 10px;
-            }
-          }
-        }
-        button{
-          background-color: transparent;
-          border: none;
-          transition: 300ms;
-          cursor: pointer;
-          &:hover{
-            transform: scale(1.08);
-          }
-          i{
-            color: #fff;
-            font-size: 22px;
-          }
-        }
-      }
-    }
-  }
 }
 
+.embedded-player {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+}

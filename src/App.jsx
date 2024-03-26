@@ -1,12 +1,11 @@
 import './App.css';
-import { useState } from 'react';
 import Login from './components/login/Login';
 import SingUp from './components/sign-up/SingUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
+import LogOut from './components/LogOut';
 
 function App() {
-  const [,] = useState(0);
 
   return (
     <>
@@ -15,6 +14,7 @@ function App() {
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/signup" element={<SingUp />} />
           <Route path="/" element={<Home />} />
+          <Route path='/logout' element={<LogOut/>}/>
         </Routes>
       </BrowserRouter>
     </>

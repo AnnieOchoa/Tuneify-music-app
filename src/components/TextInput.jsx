@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const TextInput = ({ label, placeholder, value, type, onchange }) => {
+const TextInput = ({ label, placeholder, value, type, onChange }) => {
   return (
     <div className="regular-textinput">
       <label>{label}</label>
@@ -7,7 +7,7 @@ const TextInput = ({ label, placeholder, value, type, onchange }) => {
         autoComplete=""
         type={type}
         placeholder={placeholder}
-        onChange={onchange}
+        onChange={onChange}
         value={value}
       />
     </div>
